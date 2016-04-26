@@ -16,3 +16,5 @@ npm install
 npm build
 http-server .
 ```
+
+Démo http://chat-app.kb-web.fr.surge.sh/
