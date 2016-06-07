@@ -1,6 +1,6 @@
 'use strict';
 
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {LoginComponent} from './login';
 import {ChatComponent} from './chat';
 import {Authentication} from './../services/auth';

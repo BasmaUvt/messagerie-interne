@@ -1,6 +1,6 @@
 'use strict';
 
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class Authentication {

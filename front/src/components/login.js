@@ -1,6 +1,6 @@
 'use strict';
 
-import {Component, Input} from 'angular2/core';
+import {Component, Input} from '@angular/core';
 import {Authentication} from './../services/auth';
 
 @Component({
