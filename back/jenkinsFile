@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Récupérer le code source depuis le dépôt Git
+                //git url: 'https://github.dxc.com/brakrouki2/messagerie-interne.git', branch: env.BRANCH_NAME
+                checkout scm
+            }
+        }
+
+        stage('Install') {
+            steps {
+                // Installer les dépendances du projet
+                bat 'npm install'
+            }
+        }
+
+       // stage('Buildd') {
+           // steps {
+                // Exécuter les scripts de build (si nécessaire)
+                // Par exemple, vous pouvez exécuter des scripts pour transpiler ou minifier votre code
+           // }
+       // }
+
+        stage('Test') {
+            steps {
+                // Exécuter les tests de votre projet
+                // Par exemple, vous pouvez exécuter des tests unitaires ou d'intégration avec Jest, Mocha ou un autre outil de test
+                bat 'npm test'
+            }
+        }
+
+        //stage('Deploy') {
+          //  when {
+            //    anyOf {
+                 //   branch 'master'
+                 //   branch 'dev'
+                  //  branch 'test'
+               // }
+          //  }
+          //  steps {
+                // Déployer votre application en fonction de la branche
+                // Vous pouvez utiliser des scripts pour déployer votre application sur différents environnements
+            //    script {
+             //       if (env.BRANCH_NAME == 'master') {
+             //           // Déployer sur l'environnement de production
+              //          echo "Deploying to production environment"
+              //      } else if (env.BRANCH_NAME == 'dev') {
+                        // Déployer sur l'environnement de développement
+               //         echo "Deploying to development environment"
+               //     } else if (env.BRANCH_NAME == 'test') {
+                        // Déployer sur l'environnement de test
+               //         echo "Deploying to testing environment"
+               //     }
+               // }
+         //   }
+      //  }
+    }
+}
